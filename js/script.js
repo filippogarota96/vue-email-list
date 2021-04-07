@@ -7,9 +7,11 @@ var app = new Vue ({
     let self = this;
     axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
      .then(function (response) {
-       self.email.push(response.data.response);
-      
-   });
+      for (let i = 0; i < 10; i++) {
+        self.email.push(response.data.response);
+      }
+
+     });
+   }
  }
-}
 );
